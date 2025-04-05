@@ -49,13 +49,13 @@
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222 47% 11%;
     --card-foreground: 210 40% 98%;
 
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 0 72% 35%;
+    --primary: 0 72% 45%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 217 74% 26%;
@@ -72,7 +72,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 0 72% 35%;
+    --ring: 0 72% 45%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -103,4 +103,37 @@
   .gradient-button {
     @apply bg-blue-red-gradient hover:bg-red-blue-gradient text-white transition-all duration-300;
   }
+
+  .stats-card {
+    @apply bg-card rounded-lg border border-border p-4;
+  }
+  
+  .live-match-card {
+    @apply rounded-lg overflow-hidden;
+  }
+  
+  .live-match-header {
+    @apply bg-cricket-primary text-white p-4;
+  }
+  
+  .live-badge {
+    @apply bg-white bg-opacity-20 px-2 py-1 text-xs font-medium rounded animate-pulse;
+  }
+  
+  .batsman-indicator {
+    @apply w-2 h-2 rounded-full mr-2;
+  }
+  
+  .batsman-active {
+    @apply bg-cricket-primary;
+  }
+  
+  .batsman-waiting {
+    @apply bg-gray-300;
+  }
+  
+  .match-card {
+    @apply border rounded-lg hover:border-cricket-primary hover:shadow-sm transition-all p-4;
+  }
 }
+

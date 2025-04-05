@@ -21,7 +21,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       return "dark";
     }
     
-    return "light";
+    // Default to dark theme as per the design
+    return "dark";
   });
 
   useEffect(() => {

@@ -12,7 +12,7 @@ const ThemeToggle: React.FC = () => {
       variant="ghost" 
       size="icon" 
       onClick={toggleTheme} 
-      className="rounded-full"
+      className="rounded-full text-white"
       aria-label="Toggle theme"
     >
       {theme === "light" ? (

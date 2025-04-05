@@ -11,7 +11,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   return (
-    <header className="sticky top-0 z-50 w-full gradient-header border-b shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-red-blue-gradient border-b">
       <div className="flex items-center justify-between h-16 px-4 sm:px-6">
         <div className="flex items-center">
           <Button 
@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
           </Button>
           <Link to="/" className="flex items-center space-x-2">
             <span className="text-2xl font-bold">🏏</span>
-            <span className="text-xl font-semibold hidden sm:inline-block">Cricket Tournament</span>
+            <span className="text-xl font-semibold text-white">Cricket Tournament</span>
           </Link>
         </div>
         <div className="flex items-center space-x-4">
@@ -32,8 +32,8 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
           <Button variant="ghost" size="icon" className="text-white">
             <Bell className="h-5 w-5" />
           </Button>
-          <div className="h-8 w-8 rounded-full bg-white text-cricket-primary flex items-center justify-center">
-            <span className="text-sm font-medium">U</span>
+          <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center">
+            <span className="text-sm font-medium text-blue-800">U</span>
           </div>
         </div>
       </div>
