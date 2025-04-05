@@ -1,21 +1,45 @@
 
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Home, Trophy, Users, Calendar, BarChart3, Settings } from "lucide-react";
+import { Home, Trophy, Users, Calendar, BarChart3, Settings, LogIn } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/context/AuthContext";
 
 interface SidebarProps {
   isOpen: boolean;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
-  const navItems = [
+  const { isAdmin } = useAuth();
+  
+  const commonNavItems = [
     { path: "/", icon: <Home size={20} />, label: "Dashboard" },
     { path: "/teams", icon: <Users size={20} />, label: "Teams" },
     { path: "/matches", icon: <Calendar size={20} />, label: "Matches" },
     { path: "/standings", icon: <BarChart3 size={20} />, label: "Standings" },
-    { path: "/admin", icon: <Settings size={20} />, label: "Admin" },
   ];
+  
+  // Admin-only navigation item
+  const adminNavItem = { 
+    path: "/admin", 
+    icon: <Settings size={20} />, 
+    label: "Admin" 
+  };
+  
+  // Login navigation item for non-admins
+  const loginNavItem = { 
+    path: "/login", 
+    icon: <LogIn size={20} />, 
+    label: "Admin Login" 
+  };
+  
+  // Determine which navigation items to show
+  const navItems = [...commonNavItems];
+  if (isAdmin) {
+    navItems.push(adminNavItem);
+  } else {
+    navItems.push(loginNavItem);
+  }
 
   return (
     <aside

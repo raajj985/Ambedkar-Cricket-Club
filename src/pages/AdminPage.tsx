@@ -3,9 +3,22 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Settings, Trophy, Calendar, Users, FileEdit, Kanban } from "lucide-react";
+import { Settings, Trophy, Calendar, Users, FileEdit, Kanban, LogOut } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
+import { useToast } from "@/hooks/use-toast";
 
 const AdminPage: React.FC = () => {
+  const { logout } = useAuth();
+  const { toast } = useToast();
+  
+  const handleLogout = () => {
+    logout();
+    toast({
+      title: "Logged out",
+      description: "You have been logged out of the admin panel.",
+    });
+  };
+
   const adminFeatures = [
     {
       title: "Team Management",
@@ -55,7 +68,10 @@ const AdminPage: React.FC = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold tracking-tight">Admin Portal</h1>
-        <Button variant="outline">Log Out</Button>
+        <Button variant="outline" onClick={handleLogout} className="flex items-center gap-2">
+          <LogOut size={16} />
+          Log Out
+        </Button>
       </div>
       
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
