@@ -64,8 +64,8 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				cricket: {
-					primary: '#3e8914',
-					secondary: '#1a4c0f',
+					primary: '#b33030',
+					secondary: '#1a4c9e',
 					accent: '#f5f5f5',
 					pitch: '#d9e6d2',
 					boundary: '#b33030',
@@ -97,6 +97,10 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			backgroundImage: {
+				'red-blue-gradient': 'linear-gradient(135deg, #b33030 0%, #1a4c9e 100%)',
+				'blue-red-gradient': 'linear-gradient(135deg, #1a4c9e 0%, #b33030 100%)',
 			}
 		}
 	},
